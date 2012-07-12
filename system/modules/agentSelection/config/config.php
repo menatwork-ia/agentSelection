@@ -27,7 +27,7 @@
  * @filesource
  */
 
-// Set new entrys for global operation systems array
+// Set new entries for global operation systems array
 if (array_search('iPad', array_keys($GLOBALS['TL_CONFIG']['os'])) !== false)
 {
     $i = array_search('iPad', array_keys($GLOBALS['TL_CONFIG']['os']));
