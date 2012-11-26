@@ -167,95 +167,11 @@ class AgentSelection
 
         return $arrOptions;
     }
-
-//    /**
-//     * Replace insert tags with their values
-//     * @param string
-//     * @param boolean
-//     * @return string
-//     */
-//    public function replaceInsertTags($strBuffer)
-//    { 
-//        $tags = preg_split('/\{\{([^\}]+)\}\}/', $strBuffer, -1, PREG_SPLIT_DELIM_CAPTURE);
-//
-//        $strBuffer = '';
-//        $arrCache  = array();
-//
-//        for ($_rit = 0; $_rit < count($tags); $_rit = $_rit + 2)
-//        {
-//            $strBuffer .= $tags[$_rit];
-//            $strTag = $tags[$_rit + 1];
-//
-//            // Skip empty tags
-//            if ($strTag == '')
-//            {
-//                continue;
-//}
-//
-//            // Load value from cache array
-//            if (isset($arrCache[$strTag]))
-//            {
-//                $strBuffer .= $arrCache[$strTag];
-//                continue;
-//            }
-//
-//            $elements = explode('::', $strTag);
-//
-//            $arrCache[$strTag] = '';
-//
-//            // Replace the tag
-//            switch (strtolower($elements[0]))
-//            {
-//                case 'ifos':
-//                    $arrOs = array();
-//                    foreach($GLOBALS['TL_CONFIG']['os'] as $strSystem => $arrSystem)
-//                    {
-//                        $arrOs[] = standardize($strSystem);
-//                    }                                       
-//                    $objUa = $this->Environment->agent;
-//                    
-//                    if ($elements[1] != '' && $elements[1] != $objPage->language)
-//                    {
-////                        for ($_rit; $_rit < count($tags); $_rit+=2)
-////                        {
-////                            if ($tags[$_rit + 1] == 'iflng')
-////                            {
-////                                break;
-////                            }
-////                        }
-//                    }
-//                    unset($arrCache[$strTag]);
-//                    break;
-//            }
-//
-//            $strBuffer .= $arrCache[$strTag];
-//        }
-//
-//        return $strBuffer;
-//    }
-//
-//    public function parseFrontendTemplate($strContent, $strTemplate)
-//    {
-//        $arrInsertTags = array('ifos', 'ifbrowser', 'ifmobile');
-//
-//        $strPattern = '/{{([^}}]*)}/';
-//        preg_match_all($strPattern, $strContent, $arrMatches);
-//
-//        foreach ($arrInsertTags as $strInsertTag)
-//        {
-//            if (in_array($strInsertTag, $arrMatches[1]))
-//            {
-//                return $this->replaceInsertTags($strContent);
-//                break;
-//            }
-//        }
-//
-//        return $strContent;
-//    }
     
     public function generatePage(Database_Result $objPage, Database_Result $objLayout, PageRegular $objPageRegular)
     {
-        $objPage->cssClass .= $this->getOsClass();
+        $strClass = $this->getOsClass();
+        $objPage->cssClass .= ($strClass)? ' '.$strClass : '';
     }
 
 }

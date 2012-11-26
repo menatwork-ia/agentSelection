@@ -28,9 +28,6 @@
  */
 
 // HOOKS
-//$GLOBALS['TL_HOOKS']['replaceInsertTags'][] = array('AgentSelection', 'replaceInsertTags');
-//$GLOBALS['TL_HOOKS']['parseFrontendTemplate'][] = array('AgentSelection', 'parseFrontendTemplate');
-//$GLOBALS['TL_HOOKS']['outputFrontendTemplate'][] = array('AgentSelection', 'outputFrontendTemplate');
 $GLOBALS['TL_HOOKS']['generatePage'][] = array('AgentSelection', 'generatePage');
 
 // Set new entries for global operation systems array
