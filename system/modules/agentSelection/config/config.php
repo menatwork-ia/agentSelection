@@ -27,6 +27,9 @@
  * @filesource
  */
 
+// HOOKS
+$GLOBALS['TL_HOOKS']['generatePage'][] = array('AgentSelection', 'generatePage');
+
 // Set new entries for global operation systems array
 if (array_search('iPad', array_keys($GLOBALS['TL_CONFIG']['os'])) !== false)
 {

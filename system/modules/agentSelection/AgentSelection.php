@@ -33,6 +33,8 @@
 class AgentSelection
 {
 
+    protected static $_arrIOs = array('iPad', 'iPhone', 'iPod');
+    
     /**
      * Initialize the object
      */
@@ -60,7 +62,7 @@ class AgentSelection
             if ($mixedConfig['config']['os'] == $objUa->os)
             {
 
-                if (in_array($mixedConfig['value'], $arrIOs))
+                if (in_array($mixedConfig['value'], self::$_arrIOs))
                 {
                     if (strpos($objUa->string, $mixedConfig['value']) !== false)
                     {
@@ -77,6 +79,23 @@ class AgentSelection
         }
         
         return true;
+    }
+    
+    public function getOsClass()
+    {
+        $objUa = Environment::getInstance()->agent;
+        
+        $arrIOs = self::$_arrIOs;
+        
+        foreach($arrIOs as $strIOs)
+        {
+            if (strpos($objUa->string, $strIOs) !== false)
+            {
+                return strtolower($strIOs);
+            }
+        }
+        
+        return '';
     }
     
     /**
@@ -147,6 +166,12 @@ class AgentSelection
         }
 
         return $arrOptions;
+    }
+    
+    public function generatePage(Database_Result $objPage, Database_Result $objLayout, PageRegular $objPageRegular)
+    {
+        $strClass = $this->getOsClass();
+        $objPage->cssClass .= ($strClass)? ' '.$strClass : '';
     }
 
 }
