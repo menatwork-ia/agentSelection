@@ -1,4 +1,4 @@
-<?php if (!defined('TL_ROOT')) die('You cannot access this file directly!');
+<?php
 
 /**
  * Contao Open Source CMS
@@ -40,5 +40,3 @@ if (array_search('iPad', array_keys($GLOBALS['TL_CONFIG']['os'])) !== false)
             ), array_slice($GLOBALS['TL_CONFIG']['os'], $i)
     );
 }
-
-?>
