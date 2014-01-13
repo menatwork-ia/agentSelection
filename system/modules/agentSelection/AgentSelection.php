@@ -168,7 +168,7 @@ class AgentSelection
         return $arrOptions;
     }
     
-    public function generatePage(Database_Result $objPage, Database_Result $objLayout, PageRegular $objPageRegular)
+    public function generatePage($objPage, $objLayout, $objPageRegular)
     {
         $strClass = $this->getOsClass();
         $objPage->cssClass .= ($strClass)? ' '.$strClass : '';
