@@ -1,13 +1,14 @@
 <?php
 
 /**
- * Contao Open Source CMS
+ * Extension for Contao Open Source CMS
  *
- * @copyright  MEN AT WORK 2014
+ * @copyright  MEN AT WORK 2015
  * @package    agentSelection
- * @license    GNU/LGPL
+ * @license    GNU/LGPL http://opensource.org/licenses/LGPL-3.0
  * @filesource
  */
+
 
 // HOOKS
 $GLOBALS['TL_HOOKS']['generatePage'][] = array('AgentSelection', 'generatePage');

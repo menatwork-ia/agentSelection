@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Contao Open Source CMS
+ * Extension for Contao Open Source CMS
  *
- * Copyright (c) 2005-2013 Leo Feyer
- *
- * @package AgentSelection
- * @link    https://contao.org
- * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
+ * @copyright  MEN AT WORK 2015
+ * @package    agentSelection
+ * @license    GNU/LGPL http://opensource.org/licenses/LGPL-3.0
+ * @filesource
  */
+
 
 
 /**
